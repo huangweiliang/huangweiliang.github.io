@@ -2,7 +2,7 @@
 title: HUANG
 SEOTitle: huangweiliang | Weiliang Blog
 header-img: img/post-bg-universe.jpg
-email: huw6szh@gmail.com
+email: ##huw6szh@gmail.com
 description: "ENJOY LIFE. ENJOY WORK. TRY BEST."
 keyword: "huang weiliang, blog, Linux, QNX, Virtualization, arm64, android, device driver"
 url: "http://huangweiliang.github.io"          # your host, for absolute URL
@@ -11,7 +11,7 @@ github_repo: "https://github.com/huangweiliang/huangweiliang.github.io.git" # yo
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Goals determine what you going to be!"
+sidebar-about-description: "God bless us!"
 sidebar-avatar: /img/weiliang/me.png      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
