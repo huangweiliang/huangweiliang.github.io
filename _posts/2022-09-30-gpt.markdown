@@ -1,0 +1,36 @@
+---
+layout: post
+title:  "GPT  table introduction"
+date:   2022-09-30 17:43:59
+author: half cup coffee
+categories: Linux
+tags:	Linux
+---
+
+# GPT table introduction
+
+## MBR分区表：
+
+Master Boot Record，即硬盘主引导记录分区表，只支持容量在 2.1TB 以下的硬盘，超过2.1TB的硬盘只能管理2.1TB，
+
+最多只支持4个主分区或三个主分区和一个扩展分区，扩展分区下可以有多个逻辑分区。
+
+## GPT分区表：GPT，全局唯一标识分区表(GUID Partition Table)
+
+与MBR最大4个分区表项的限制相比，GPT对分区数量没有限制，但Windows最大仅支持128个GPT分区，GPT可管理硬盘大小达到了18EB。
+
+只有基于UEFI平台的主板才支持GPT分区引导启动。
+
+详细的分区格式：
+
+![Crepe](/assets/gpt1.jpg)
+
+![Crepe](/assets/gpt2.jpg)
+
+![Crepe](/assets/gpt3.png)
+
+
+extension read: [UEFI boot]
+
+
+[UEFI boot]: https://www.happyassassin.net/posts/2014/01/25/uefi-boot-how-does-that-actually-work-then/
