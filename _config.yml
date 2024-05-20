@@ -102,4 +102,18 @@ defaults:
       layout: "blog"
       comments: true
 
+social:
 
+  - name: Facebook
+    icon: facebook
+    username: huangweiliang
+    url: https://www.facebook.com/profile.php?id=100085741981390
+    desc: Friend me on Facebook
+    share: true
+
+  - name: LinkedIn
+    icon: linkedin
+    username: huang weiliang
+    url: https://www.linkedin.com/in/weiliang-huang-553425a9/
+    desc: Connect with me on LinkedIn
+    share: true
