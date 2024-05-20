@@ -1,9 +1,9 @@
 # Site settings
-title: Weiliang Blog
-SEOTitle: Weiliang Blog | Weiliang Blog
+title: Half Cup Coffee
+SEOTitle: Half Cup Coffee | Weiliang Blog
 header-img: img/post-bg-universe.jpg
 email: huw6szh@gmail.com
-description: "Enjoy life, Enjoy working"
+description: "Enjoy life. Enjoy working. Try best."
 keyword: "huang weiliang, blog, Linux, QNX, Virtualization, arm64, android, device driver"
 url: "http://huangweiliang.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
@@ -54,6 +54,8 @@ kramdown:
 # Disqus（https://disqus.com/）
 disqus:
     enable: true
+    username: https-huangweiliang-github-io
+
 disqus_username: https-huangweiliang-github-io
 
 # Gitalk
