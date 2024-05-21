@@ -1,10 +1,13 @@
 ---
 layout: post
-title:  "GPT  table introduction"
+title:  "GPT table introduction"
+subtitle: "Get a initial impression about GPT"
+header-img: img/post-bg-coffee.jpeg
 date:   2022-09-30 17:43:59
 author: half cup coffee
 categories: Linux
-tags:	Linux
+tags:
+    - Storage
 ---
 
 # GPT table introduction
@@ -23,11 +26,11 @@ Master Boot Record，即硬盘主引导记录分区表，只支持容量在 2.1T
 
 详细的分区格式：
 
-![Crepe](/assets/gpt1.jpg)
+![Crepe](/img/gpt1.jpg)
 
-![Crepe](/assets/gpt2.jpg)
+![Crepe](/img/gpt2.jpg)
 
-![Crepe](/assets/gpt3.png)
+![Crepe](/img/gpt3.png)
 
 
 extension read: [UEFI boot]

@@ -1,10 +1,14 @@
 ---
 layout: post
 title:  "Cache and TLB introduction"
+subtitle: "Basic deep knowledge for ARM"
 date:   2022-12-26 08:43:59
 author: half cup coffee
 categories: Linux
-tags:	Linux
+tags:
+    - Linux
+    - arm64
+    - Cache
 ---
 
 # What is Cache ?  
@@ -13,7 +17,7 @@ See this description from [ARM document]:
 
 *A cache is a small, fast block of memory that sits between the core and main memory. It holds copies of items in main memory. Accesses to the cache memory occur significantly faster than those to main memory. Whenever the core reads or writes a particular address, it first looks for it in the cache. If it finds the address in the cache, it uses the data in the cache, rather than performing an access to main memory.*
 
-![Crepe](/assets/cache-tlb-1.png)
+![Crepe](/img/cache-tlb-1.png)
 
 There are different type of Cache and different level of Cache.  For example,  there are data cache only for data which is called d-cache, and instruction  cache only for instructions which is called I-cache.
 
@@ -25,7 +29,7 @@ When CPU core try to access a data.  It will first check if the data is availabl
 A simplified four-way set associative 32KB L1 cache (such as the data cache of the Cortex-A57
 processor), with a 16-word (64 byte) cache line length:
 
-![Crepe](/assets/cache-tlb-2.png)
+![Crepe](/img/cache-tlb-2.png)
 
 # TLB
 
@@ -49,14 +53,14 @@ Here is a good explanation about TLB from :  [TLB intro article]
 
 *kernel space can be mapped to the most significant area of memory and the Virtual Address space associated with each application mapped to the least significant area of memory. However, both of these are mapped to a much smaller Physical Address space.*
 
-![Crepe](/assets/cache-tlb-3.png)
+![Crepe](/img/cache-tlb-3.png)
 
 ## Translating a Virtual Address to a Physical Address
 
 There are several information we shall know:
 Physical memory is used by page by page.  The DRAM which we call main memory is spited piece by piece which each piece is 4KB typically. (it is configurable, but typically 4KB).  So there is a concept to index the physical memory is by page.  
 
-![Crepe](/assets/cache-tlb-4.png)
+![Crepe](/img/cache-tlb-4.png)
 
 These 2 address space has its own page table.  So 3 steps to do the translation:
 
@@ -73,7 +77,7 @@ a second-level table, the first-level descriptor contains the physical base addr
 second-level page table. The Physical Address that corresponds to the Virtual Address requested
 by the processor, is found in the second-level descriptor.*
 
-![Crepe](/assets/cache-tlb-5.png)
+![Crepe](/img/cache-tlb-5.png)
 
 
 

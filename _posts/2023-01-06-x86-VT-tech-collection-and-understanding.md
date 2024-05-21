@@ -1,10 +1,14 @@
 ---
 layout: post
 title:  "x86 VT tech collection and understanding"
+subtitle: "A initial step for me to learn the virtualization"
+header-img: img/post-bg-coffee.jpeg
 date:   2023-01-06 17:43:59
 author: half cup coffee
 categories: Virtualization
-tags:	Virtualization
+tags:	
+    - Virtualization
+    - X86
 ---
 
 # A summary introduction of x86\-64
@@ -26,7 +30,7 @@ CPU 的性能相比从前有很大的提升\,具备支持多个操作系统的�
 Small shim layer runs on hardware
 
 Create operating environment which guest OS can run\. Resource assignment
-![](/assets/x86-VT-tech/img/10.png)
+![](/img/x86-VT-tech/img/10.png)
 
 #### Type 2
 
@@ -35,17 +39,17 @@ A complete OS which with the ability to host another complete OS within a host p
 Acceptable for desktop
 
 
-![](/assets/x86-VT-tech/img/11.png)
+![](/img/x86-VT-tech/img/11.png)
 
 ## current solution on the market
 
-![](/assets/x86-VT-tech/img/12.png)
+![](/img/x86-VT-tech/img/12.png)
 
 ## What a operation system depends on?
 
 VM OS software is same as the OS direct running on HW\, No difference\.
 
-![](/assets/x86-VT-tech/img/13.png)
+![](/img/x86-VT-tech/img/13.png)
 
 ## VM OS doesn’t know it is running in VM environment
 
@@ -61,13 +65,13 @@ VM OS software is same as the OS direct running on HW\, No difference\.
 
 ## Intel X86 Hardware acceleration for virtualization
 
-![](/assets/x86-VT-tech/img/14.png)
+![](/img/x86-VT-tech/img/14.png)
 
-![](/assets/x86-VT-tech/img/15.png)
+![](/img/x86-VT-tech/img/15.png)
 
-![](/assets/x86-VT-tech/img/16.png)
+![](/img/x86-VT-tech/img/16.png)
 
-![](/assets/x86-VT-tech/img/17.png)
+![](/img/x86-VT-tech/img/17.png)
 
 ## Intel's technology for virtualization on the x86 platform
 
@@ -91,25 +95,25 @@ Virtual\-machine monitors \(VMM\)
 
 ## IA privilege level
 
-![](/assets/x86-VT-tech/img/18.png)
+![](/img/x86-VT-tech/img/18.png)
 
 User space applications
 
 ## VMX root operation
 
-![](/assets/x86-VT-tech/img/19.png)
+![](/img/x86-VT-tech/img/19.png)
 
-![](/assets/x86-VT-tech/img/110.png)
+![](/img/x86-VT-tech/img/110.png)
 
 ## Lifecycle of VMM
 
-![](/assets/x86-VT-tech/img/111.png)
+![](/img/x86-VT-tech/img/111.png)
 
-![](/assets/x86-VT-tech/img/112.png)
+![](/img/x86-VT-tech/img/112.png)
 
 __Virtual machine control structure__
 
-![](/assets/x86-VT-tech/img/113.png)
+![](/img/x86-VT-tech/img/113.png)
 
 __Guest\-state area__
 
@@ -125,7 +129,7 @@ __VM\-exit information fields__
 
 APIC\(Advanced Programmable interrupt controller \)
 
-![](/assets/x86-VT-tech/img/114.png)
+![](/img/x86-VT-tech/img/114.png)
 
 PIC \(Programmable interrupt controller \)
 
@@ -143,13 +147,13 @@ PIC \(Programmable interrupt controller \)
 
 * route the interrupts it receives from peripheral buses to one or more local APICs
 
-![](/assets/x86-VT-tech/img/115.gif)
+![](/img/x86-VT-tech/img/115.gif)
 
 ## APIC Virtualization and Virtual Interrupts
 
 Accesses to the APIC\, track the state of the virtual APIC\, and deliver virtual interrupts — all in VMX non\-root operation with out a VM exit
 
-![](/assets/x86-VT-tech/img/116.png)
+![](/img/x86-VT-tech/img/116.png)
 
 #### APIC\-register virtualization
 
@@ -184,10 +188,10 @@ process posted interrupts
   * VM exits add to execution time
   * Shadow page tables consume significant host memory
 
-![](/assets/x86-VT-tech/img/117.gif)
+![](/img/x86-VT-tech/img/117.gif)
 
 
-![](/assets/x86-VT-tech/img/118.gif)
+![](/img/x86-VT-tech/img/118.gif)
 
 With hardware support for nested paging caches both the Virtual memory \(Guest OS\) to Physical memory \(Guest OS\) as the Physical Memory \(Guest OS\) to real physical memory transition in the TLB\. The TLB has a new  __VM specific tag__ \, called the Address Space IDentifier \(ASID\)\. This allows the  __TLB to keep track of which TLB entry belongs to which VM__ \. The result is that a VM switch does not flush the TLB\. The TLB entries of the different virtual machines all coexist peacefully in the TLB
 
@@ -233,7 +237,7 @@ information for multiple linear\-address spaces\. When VPIDs are used\, VMX tran
 
 When a VM or a Guest is launched over the VMM\, the address space that the Guest OS is provided as its physical address range\, known as  __Guest Physical Address \(GPA\)__ \, may not be the same as the real  __Host Physical Address \(HPA\)__ \. DMA capable devices need HPA to transfer the data to and from physical memory locations\. However\, in a direct assignment model\, the guest OS device driver is in control of the device and is providing GPA instead of HPA required by the DMA capable device\. DMA remapping hardware can be used to do the appropriate conversion\. Since the GPA is provided by the VMM it knows the conversion from the GPA to the HPA\. The VMM programs the DMA remapping hardware with the GPA to HPA conversion information so the DMA remapping hardware can perform the necessary translation\. Using the remapping\, the data can now be transferred directly to the appropriate buffer of the guests rather than going through an intermediate software emulation layer\.
 
-![](/assets/x86-VT-tech/img/119.png)
+![](/img/x86-VT-tech/img/119.png)
 
 TRANSLATION:
 
@@ -265,9 +269,9 @@ Hypervisor directly assigns the full GPU resource to each virtual machine\. Thus
 
 vGPU device model
 
-![](/assets/x86-VT-tech/img/120.png)
+![](/img/x86-VT-tech/img/120.png)
 
-![](/assets/x86-VT-tech/img/121.png)
+![](/img/x86-VT-tech/img/121.png)
 
 # Virtualization in the ARM Cortex™ Processors
 
@@ -283,7 +287,7 @@ __How does ARM do Virtualization__
 
 * New Non\-secure level of privilege to hold Hypervisor
 
-![](/assets/x86-VT-tech/img/122.png)
+![](/img/x86-VT-tech/img/122.png)
 
 __Privilege__
 
@@ -299,7 +303,7 @@ __Privilege__
 
 __Virtual Memory in Two StageS__
 
-![](/assets/x86-VT-tech/img/123.png)
+![](/img/x86-VT-tech/img/123.png)
 
 
 __Virtual interrupt(Virtual GIC )__
@@ -318,5 +322,5 @@ __Virtual interrupt(Virtual GIC )__
 
 Hypervisor can deliver an interrupt to a CPU running a virtual process
 
-![](/assets/x86-VT-tech/124.png)
+![](/img/x86-VT-tech/124.png)
 
