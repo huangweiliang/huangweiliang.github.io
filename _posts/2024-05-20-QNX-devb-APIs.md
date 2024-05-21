@@ -1,10 +1,15 @@
 ---
 layout: post
 title:  "QNX devb related API"
+subtitle: "A recordning from a devb-ufs driver learning"
+header-img: img/post-bg-coffee.jpeg
 date:   2024-05-20 14:50:00
 author: half cup coffee
-categories: QNX
-tags:	QNX
+catalog: true
+tags:
+    - QNX
+    - Resource manager
+    - UFS
 ---
 
 # Background
@@ -93,6 +98,37 @@ In the QNX operating system, CAM_SIM_ENTRY is a macro used in the SCSI subsystem
 
 The CAM_SIM_ENTRY macro is used to mark the entry points for the SIM. These functions are called by the Common Access Method (CAM) layer of the SCSI subsystem to perform operations like sending commands to a SCSI device or handling responses from a SCSI device.
 
+### cam_set_thread_state
+The cam_set_thread_state function is typically used to set the state of a CAM thread. The CAM layer uses threads to handle various tasks, such as processing I/O requests or handling responses from SCSI devices.
+
+The state of a thread can indicate what the thread is currently doing or what it should do next. For example, a thread might have states like "idle", "busy", or "waiting for response".
+
+### HBA
+In the QNX operating system, *SIM_HBA* is a structure used in the SCSI subsystem, specifically in the SCSI Interface Module (SIM).
+
+The *SIM_HBA* structure represents a Host Bus Adapter (HBA). In the context of SCSI, an HBA is a hardware device that provides an interface between the SCSI bus and the host system's bus. The HBA is responsible for sending and receiving data between the SCSI devices and the host system.
+
+The *SIM_HBA* structure typically contains information about the HBA, such as its capabilities, configuration, and state. It also contains pointers to functions that the SIM uses to interact with the HBA.
+
+### sim_alloc_hba()
+In the QNX operating system, *sim_alloc_hba* is a function used in the SCSI subsystem, specifically in the SCSI Interface Module (SIM).
+
+The *sim_alloc_hba* function is typically used to allocate memory for a *SIM_HBA* structure. The *SIM_HBA* structure represents a Host Bus Adapter (HBA), which is a hardware device that provides an interface between the SCSI bus and the host system's bus.
+
+The function typically takes as arguments the size of the *SIM_HBA* structure and possibly other parameters related to the configuration of the HBA.
+
+### cam_mphys()
+In the QNX operating system, *cam_mphys* is a function used in the SCSI subsystem, specifically in the Common Access Method (CAM) layer.
+
+The *cam_mphys* function is typically used to convert a virtual memory address to a physical memory address. This is often necessary when dealing with hardware devices, such as SCSI devices, that require physical addresses for Direct Memory Access (DMA) operations.
+
+### simq_init()
+In the QNX operating system, *simq_init* is a function used in the SCSI subsystem, specifically in the SCSI Interface Module (SIM).
+
+The *simq_init* function is typically used to initialize a SIM queue. A SIM queue is a queue of Command Control Blocks (CCBs) that are waiting to be sent to a SCSI device.
+
+The initialization process typically involves setting up the data structures for the queue and setting the initial state of the queue. This might include setting the queue to be empty and setting any necessary configuration options for the queue.
+
 
 ## UFS driver modeling
 ### UFS utp transfer request slots
@@ -106,5 +142,52 @@ A "UTP Transfer Request Slot" is a slot in the UFSHCI (UFS Host Controller Inter
 
 The host writes the command (and any associated data) into a UTP Transfer Request Descriptor, and then signals the UFS device to process the command by writing to the UTP Transfer Request Run Stop Register (UTRLRSR) and the UTP Transfer Request Doorbell Register (UTRLDBR).
 
+### UTP command
+In the context of Universal Flash Storage (UFS), UTP (UFS Transport Protocol) commands are the commands that are sent from the host system to the UFS device to perform various operations.
+
+UFS is a high-performance interface designed for use in applications where power consumption is a critical factor, such as mobile systems. UFS uses the SCSI command set for data transport, but it has its own transport protocol, UTP.
+
+A UTP command is encapsulated in a UTP Command Descriptor (UCD). The UCD contains all the information needed to process the command, including the operation code (opcode), the logical unit number (LUN), the command argument, and the data direction (read or write).
+
+There are various types of UTP commands, including:
+
+* Read: Read data from the UFS device.
+* Write: Write data to the UFS device.
+* Inquiry: Request information about the UFS device.
+* Test Unit Ready: Check if the UFS device is ready to transfer data.
+* Mode Sense: Request mode parameters from the UFS device.
+* Mode Select: Send mode parameters to the UFS device.
+
+### UTP Transfer Request Descriptor
+UTP Transfer Request Descriptor (UTRD) is a data structure that represents a UFS Transport Protocol (UTP) command to be executed by a UFS device.
+
+The UTRD contains all the information needed to process the UTP command, including:
+
+* The operation code (opcode) of the UTP command.
+* The logical unit number (LUN) that the command is targeted at.
+* The command argument, which provides additional information for the command.
+* The data direction (read or write).
+* The data buffer, which contains the data to be written or the space for the data to be read.
+
+The UTRD is typically stored in memory that is accessible by both the host system and the UFS device, and the physical address of the UTRD is passed to the UFS device to initiate the command.
 
 
+### UTP Task Management
+UTP Task Management refers to a set of commands that are used to control and manage the execution of UTP commands.
+
+These task management commands are encapsulated in UTP Task Management Request Descriptors (UTMRDs). The UTMRD contains all the information needed to process the task management command, including the task management function to be performed and the logical unit number (LUN) that the function is targeted at.
+
+There are various types of UTP task management functions, including:
+
+* Abort Task: Aborts a specific command.
+* Abort Task Set: Aborts all commands for a specific LUN.
+* Clear Task Set: Clears all commands for a specific LUN.
+* Logical Unit Reset: Resets a specific LUN.
+* Target Reset: Resets the UFS device.
+
+### SLOTS
+A slot refers to a position in the command queue where a command can be placed for execution. This is similar to the concept of "IO depth" in other storage systems.
+
+Each slot can hold a UTP command, which is encapsulated in a UTP Transfer Request Descriptor (UTRD). The UFS device can process multiple commands concurrently, up to a limit defined by the device. This limit is often referred to as the number of "slots" or the "queue depth".
+
+When a command is issued, it is placed in a free slot in the command queue. The UFS device then processes the commands in the queue, possibly in parallel. When a command is completed, its slot becomes free and can be used for another command.
