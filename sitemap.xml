@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://huangweiliang.github.io/</loc>
+  <lastmod>2024-05-21T11:54:53+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://huangweiliang.github.io/about/</loc>
+  <lastmod>2024-05-21T11:54:53+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://huangweiliang.github.io/tags/</loc>
+  <lastmod>2024-05-21T11:54:53+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://huangweiliang.github.io/2024/05/20/QNX-devb-APIs/</loc>
+  <lastmod>2024-05-21T11:54:53+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://huangweiliang.github.io/virtualization/2023/01/06/x86-VT-tech-collection-and-understanding/</loc>
+  <lastmod>2024-05-21T11:54:53+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://huangweiliang.github.io/linux/2023/01/04/use-debian-tool-set-in-android-system/</loc>
+  <lastmod>2024-05-21T11:54:53+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://huangweiliang.github.io/linux/2022/12/26/Cache-and-TLB-introduction/</loc>
+  <lastmod>2024-05-21T11:54:53+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://huangweiliang.github.io/linux/2022/09/30/virtio/</loc>
+  <lastmod>2024-05-21T11:54:53+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://huangweiliang.github.io/linux/2022/09/30/gpt/</loc>
+  <lastmod>2024-05-21T11:54:53+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://huangweiliang.github.io/linux/2022/09/30/linux-9pfs/</loc>
+  <lastmod>2024-05-21T11:54:53+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://huangweiliang.github.io/linux/2022/09/30/linux-fs-read-enlarge-effect/</loc>
+  <lastmod>2024-05-21T11:54:53+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://huangweiliang.github.io/linux/2022/09/30/qemu-android-kernel/</loc>
+  <lastmod>2024-05-21T11:54:53+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
+</urlset>
