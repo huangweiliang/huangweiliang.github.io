@@ -15,11 +15,13 @@ tags:
 # Background
 Not all the description of QNX API you can found from QNX offical online manual. Some APIs only known by QNX and their paratners, such as chip vendor.
 
-Here Lists some APIs description about devb.
+Here Lists some APIs description about devb device driver.
+
+It is easy to find an [example](https://github.com/markotikvic/QNX-BBB/tree/master/src/hardware/devb/mmcsd) of devb device driver. Although this driver is 9 years ago. But it is a good reference to know how a device driver connect to QNX CAM layer and block layer. This concpet and most of APIs are not changed in current qnx 7.0 and 7.1.
 
 # devb related APIs
 
-## Function void simq_post_ccb( SIMQ *, CCB_SCSIIO * );
+## Function simq_post_ccb( SIMQ *, CCB_SCSIIO * );
 
 It is part of the QNX Neutrino Realtime Operating System's SCSI Interface Module (SIM) layer. This function is used to post a Command Control Block (CCB) to the SIM queue.
 *SIMQ* is a pointer to the SIM queue, and *CCB_SCSIIO* is a pointer to the CCB to be posted.
