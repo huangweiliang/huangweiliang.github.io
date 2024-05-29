@@ -7,8 +7,7 @@ date:   2024-05-26 08:43:59
 author: half cup coffee
 catalog: true
 tags:
-    - Linux
-    - arm64
+    - Arm64
     - Cache
 ---
 
