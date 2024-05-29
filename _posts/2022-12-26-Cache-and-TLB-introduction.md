@@ -2,9 +2,10 @@
 layout: post
 title:  "Cache and TLB introduction"
 subtitle: "Basic deep knowledge for ARM"
+header-img: img/post-bg-coffee.jpeg
 date:   2022-12-26 08:43:59
 author: half cup coffee
-categories: Linux
+catalog: true
 tags:
     - Linux
     - arm64
