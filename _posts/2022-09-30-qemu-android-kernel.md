@@ -1,10 +1,15 @@
 ---
 layout: post
 title:  "Setup Qemu for arm64 android kernel running"
+subtitle: "A way to run the latest android kernel what you want"
 date:   2022-09-30 08:43:59
 author: half cup coffee
-categories: Linux
-tags:	Linux
+header-img: img/post-bg-coffee.jpeg
+catalog: true
+tags:	
+    - Linux
+    - Android
+    - Qemu
 ---
 
 # Setup Qemu for arm64 android kernel running 
