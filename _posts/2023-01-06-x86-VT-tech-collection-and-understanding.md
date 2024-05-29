@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "x86 VT tech collection and understanding"
+title:  "x86 Virtualization: VT tech collection and understanding"
 subtitle: "A initial step for me to learn the virtualization"
 header-img: img/post-bg-coffee.jpeg
 date:   2023-01-06 17:43:59
 author: half cup coffee
-categories: Virtualization
+catalog: true
 tags:	
     - Virtualization
     - X86
