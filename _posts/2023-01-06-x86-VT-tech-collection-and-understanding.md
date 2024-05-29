@@ -1,19 +1,19 @@
 ---
 layout: post
-title:  "x86 Virtualization: VT tech collection and understanding"
-subtitle: "A initial step for me to learn the virtualization"
+title:  "x86 Virtualization: collection and understanding"
+subtitle: "A initial step to learn the virtualization"
 header-img: img/post-bg-coffee.jpeg
-date:   2023-01-06 17:43:59
+date:   2024-05-28 17:43:59
 author: half cup coffee
 catalog: true
-tags:	
+tags:
     - Virtualization
     - X86
 ---
 
 # A summary introduction of x86\-64
 
-### Why Virtualization?
+## Why Virtualization?
 
 CPU 的性能相比从前有很大的提升\,具备支持多个操作系统的资源
 
@@ -23,16 +23,16 @@ CPU 的性能相比从前有很大的提升\,具备支持多个操作系统的�
 
 根据实际情况动态的性能迁移\(dynamic resource management\)
 
-### Virtualization type
+## Virtualization type
 
-#### Type 1
+### Type 1
 
 Small shim layer runs on hardware
 
 Create operating environment which guest OS can run\. Resource assignment
 ![](/img/x86-VT-tech/img/10.png)
 
-#### Type 2
+### Type 2
 
 A complete OS which with the ability to host another complete OS within a host process
 
@@ -133,17 +133,17 @@ APIC\(Advanced Programmable interrupt controller \)
 
 PIC \(Programmable interrupt controller \)
 
-### Split architecture design
+## Split architecture design
 
 
 
-#### Local APIC \(LAPIC\) for every processor
+### Local APIC \(LAPIC\) for every processor
 
 * manage all external interrupts for some specific processor
 
 * accept and generate inter\-processor interrupts \(IPIs\) between LAPICs
 
-#### I/O APIC on a system bus
+### I/O APIC on a system bus
 
 * route the interrupts it receives from peripheral buses to one or more local APICs
 
@@ -155,7 +155,7 @@ Accesses to the APIC\, track the state of the virtual APIC\, and deliver virtual
 
 ![](/img/x86-VT-tech/img/116.png)
 
-#### APIC\-register virtualization
+### APIC\-register virtualization
 
 Redirects most guest APIC reads/writes to virtual\-APIC page
 
@@ -165,7 +165,7 @@ Most reads will be allowed without VM exits
 
 VM exits occur after __ __ writes \(no need for decode\)
 
-#### Virtual\-interrupt delivery
+### Virtual\-interrupt delivery
 
 Extend TPR\(Task priority\) virtualization to other APIC registers
 
