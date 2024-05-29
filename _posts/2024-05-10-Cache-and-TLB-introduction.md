@@ -3,7 +3,7 @@ layout: post
 title:  "Cache and TLB introduction"
 subtitle: "Basic deep knowledge for ARM"
 header-img: img/post-bg-coffee.jpeg
-date:   2024-05-26 08:43:59
+date:   2024-05-10 14:50:00
 author: half cup coffee
 catalog: true
 tags:
