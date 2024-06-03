@@ -1,9 +1,9 @@
 # Site settings
 title: HUANG
-SEOTitle: huangweiliang | Weiliang Blog
+SEOTitle: huang weiliang | Embedded software | Linux Android QNX | Automotive
 header-img: img/post-bg-universe.jpg
 email:
-description: "ENJOY LIFE. ENJOY WORK. TRY BEST."
+description: "huang weiliang, blog, Linux, QNX, Virtualization, arm64, android, device driver"
 keyword: "huang weiliang, blog, Linux, QNX, Virtualization, arm64, android, device driver"
 url: "http://huangweiliang.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
