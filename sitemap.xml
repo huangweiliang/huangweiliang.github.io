@@ -9,63 +9,88 @@
 
 <url>
   <loc>https://huangweiliang.github.io/</loc>
-  <lastmod>2024-05-21T11:54:53+00:00</lastmod>
+  <lastmod>2024-06-04T02:00:32+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://huangweiliang.github.io/about/</loc>
-  <lastmod>2024-05-21T11:54:53+00:00</lastmod>
+  <lastmod>2024-06-04T02:00:32+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://huangweiliang.github.io/tags/</loc>
-  <lastmod>2024-05-21T11:54:53+00:00</lastmod>
+  <lastmod>2024-06-04T02:00:32+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://huangweiliang.github.io/2024/06/03/fio/</loc>
+  <lastmod>2024-06-04T02:00:32+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://huangweiliang.github.io/2024/06/02/real-time-rendering/</loc>
+  <lastmod>2024-06-04T02:00:32+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://huangweiliang.github.io/2024/05/28/UFS/</loc>
+  <lastmod>2024-06-04T02:00:32+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://huangweiliang.github.io/2024/05/28/virtio/</loc>
+  <lastmod>2024-06-04T02:00:32+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://huangweiliang.github.io/2024/05/28/x86-VT-tech-collection-and-understanding/</loc>
+  <lastmod>2024-06-04T02:00:32+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://huangweiliang.github.io/2024/05/27/bible1/</loc>
+  <lastmod>2024-06-04T02:00:32+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://huangweiliang.github.io/2024/05/20/QNX-devb-APIs/</loc>
-  <lastmod>2024-05-21T11:54:53+00:00</lastmod>
+  <lastmod>2024-06-04T02:00:32+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://huangweiliang.github.io/virtualization/2023/01/06/x86-VT-tech-collection-and-understanding/</loc>
-  <lastmod>2024-05-21T11:54:53+00:00</lastmod>
+  <loc>https://huangweiliang.github.io/2024/05/10/Cache-and-TLB-introduction/</loc>
+  <lastmod>2024-06-04T02:00:32+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://huangweiliang.github.io/linux/2023/01/04/use-debian-tool-set-in-android-system/</loc>
-  <lastmod>2024-05-21T11:54:53+00:00</lastmod>
+  <lastmod>2024-06-04T02:00:32+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://huangweiliang.github.io/linux/2022/12/26/Cache-and-TLB-introduction/</loc>
-  <lastmod>2024-05-21T11:54:53+00:00</lastmod>
+  <loc>https://huangweiliang.github.io/2022/09/30/gpt/</loc>
+  <lastmod>2024-06-04T02:00:32+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://huangweiliang.github.io/linux/2022/09/30/virtio/</loc>
-  <lastmod>2024-05-21T11:54:53+00:00</lastmod>
+  <loc>https://huangweiliang.github.io/page2/</loc>
+  <lastmod>2024-06-04T02:00:32+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://huangweiliang.github.io/linux/2022/09/30/gpt/</loc>
-  <lastmod>2024-05-21T11:54:53+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://huangweiliang.github.io/2022/09/30/linux-9pfs/</loc>
+  <lastmod>2024-06-04T02:00:32+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://huangweiliang.github.io/linux/2022/09/30/linux-9pfs/</loc>
-  <lastmod>2024-05-21T11:54:53+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://huangweiliang.github.io/2022/09/30/linux-fs-read-enlarge-effect/</loc>
+  <lastmod>2024-06-04T02:00:32+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://huangweiliang.github.io/linux/2022/09/30/linux-fs-read-enlarge-effect/</loc>
-  <lastmod>2024-05-21T11:54:53+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://huangweiliang.github.io/linux/2022/09/30/qemu-android-kernel/</loc>
-  <lastmod>2024-05-21T11:54:53+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://huangweiliang.github.io/2022/09/30/qemu-android-kernel/</loc>
+  <lastmod>2024-06-04T02:00:32+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 
 
