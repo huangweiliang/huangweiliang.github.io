@@ -3,7 +3,7 @@ layout: post
 title:  "Manually cross compile a program for android"
 subtitle: "Get rid of the android build system"
 header-img: img/post-bg-coffee.jpeg
-date:   2024-07-17 08:00:00
+date:   2024-07-17 09:00:00
 author: half cup coffee
 catalog: true
 tags:	
