@@ -10,7 +10,6 @@ tags:
     - Android
 ---
 
-
 # Cross compile a programm for android
 
 Android build system will compole all the software components includes the kernel, native libraries and so on. Normally if we are going to add a native program we need follow the android rules to add the makefile Android.bp or Android.mk. If the program only consist of several source files or even single file. It is easy for us to add the android makefile for it. But sometimes we want to port opensource program to android which it might include hundreds of source files and many sub folders, also need feature configuration before we compile it.
