@@ -55,12 +55,6 @@ What a simple reason !! But it shall not be accepted !!
 
 Resource is always an issue because project need to control the cost. Using fewer resources to reach the same goal is always the expectation. So, an engineer's ability to finish work under stress or in poor conditions is an important measurement metric. Here, we are not discussing suppressing the work from 2 weeks to 1 week. Here is talking about the ability of a team to deliver the work w/o "no resource" reasons.
 
-It is an essential mindset for every engineer to know that: 
-
-* Delay means the cost to the project
-* High cost means less profit company can get
-* High cost means less competition in the market
-
 
 ## Aggressive planning
 
