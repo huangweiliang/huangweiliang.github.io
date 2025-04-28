@@ -82,6 +82,16 @@ The team shall also track individual capability. What are the expectations of ea
 
 The engineers should also be aware that they should spend additional time studying independently and not wait for a learning task from a project. It is about individual competence and elevating personal value.
 
+## To understand how the company convert business to your salary 
+
+Factory is the real money machine and produce the values because it is the last step for a development to be a product.  Customer only pay for product although they also pay for development but they are different. Product and manufactory is keeping generating the values in the later several years of the development. Development is burning the money.
+So one month delay for convert development to production means company need to burning 1 more month money. And the salary is coming from the values created by the factory.
+
+So speedup the development speed can save money (burning) and convert the development to production faster. Why we need follow agile, SAFe and so on. All because of speedup the development. 
+
+To a single person, speedup can be done over the daily work. All above points are about speedup, such as communication, Aggressive planning, competence buildup and so on.
+
+Speedup measurement can be a personal performance measurement metric.
 
 # Conclusion
 
@@ -89,5 +99,4 @@ Personal growth is always the most important thing. Personal competitiveness wil
 
 The company's competitiveness will finally return to individuals with more opportunities for personal growth.
 
-TBC..
-MAYBE...
+updated: 04/28

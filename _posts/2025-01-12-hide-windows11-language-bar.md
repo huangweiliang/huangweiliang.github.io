@@ -22,7 +22,7 @@ Continue for Win10. After around two or three years, the system needs to be upgr
 
 This is the annoying language bar.  You can not image you can not find a button to hide it from the meanu of this small window.
 
-![Crepe](/img/win11-1.png)
+
 
 
 # The way to hide it
