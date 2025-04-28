@@ -91,7 +91,7 @@ So speedup the development speed can save money (burning) and convert the develo
 
 To a single person, speedup can be done over the daily work. All above points are about speedup, such as communication, Aggressive planning, competence buildup and so on.
 
-Speedup measurement can be a personal performance measurement metric.
+Speedup improvement can be used as the measurement for personal performance measurement metric.
 
 # Conclusion
 
