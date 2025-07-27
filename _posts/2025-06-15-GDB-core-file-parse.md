@@ -189,17 +189,27 @@ x2             0x1c502e0           29688544
 __memcpy destination:__
 ```java
 x0 = 0x51bfb97000 + 0xa98 = 0x51bfb97a98  
+
+(gdb) disassemble 0x51bfb97a98
+Dump of assembler code for function FileBuffer:
+   0x00000051bfb97a98 <+0>:     adds    x14, x22, #0x2f2
+   0x00000051bfb97a9c <+4>:     .inst   0x8000000c ; undefined
+   0x00000051bfb97aa0 <+8>:     .inst   0x0000000a ; undefined
+
 ```
  
-0x51bfb97a98 is start of FileBuffer. which the size is 0x1c6f960.  it is larger than the copy size.  so the destination buffer is safe.
+0x51bfb97a98 is start of FileBuffer. which the size is *0x1c6f960*.  it is larger than the copy size.  so the destination buffer is safe.
 
 ```java
-0000000000ee5a98 0x1c6f960 OBJECT  LOCAL  DEFAULT   20 langFileBuffer
-memcpy size:
-x2 (Size): 0x1c502e0
+readelf -s libxxxxx.so | grep FileBuffer
+  1254: 0000000000ee5a98 0x1c6f960 OBJECT  LOCAL  DEFAULT   20 FileBuffer
+
 ```
 
-__Try to access the source memory address:__
+__memcpy size:__
+x2 (Size): 0x1c502e0
+
+__Try to access the source memory address: 0x2870c55fc8__
 ```java
 (gdb) dump memory source_mem_dump.bin 0x2870c55fc8 0x2870c55fc8 + 0x1c502e0
 Cannot access memory at address 0x2870c56000
