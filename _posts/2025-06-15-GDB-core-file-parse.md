@@ -3,7 +3,7 @@ layout: post
 title:  "Parse the coredump file - a practice of gdb "
 subtitle: "use the GDB more than backtrace"
 header-img: img/post-bg-coffee.jpeg
-date:   2025-07-27 08:00:00
+date:   2025-07-26 08:00:00
 author: half cup coffee
 catalog: true
 tags:	
