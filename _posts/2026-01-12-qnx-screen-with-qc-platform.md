@@ -16,13 +16,12 @@ tags:
 
 This article explains how QNX Screen Graphics Subsystem integrates with hardware vendor implementations, specifically focusing on Qualcomm's OpenWF Display (WFD) architecture. Understanding this flow is crucial for embedded graphics development on QNX platforms.
 
----
 
 ## Architecture Overview
 
 ### System Stack
 
-```c
+```
 ┌─────────────────────────────────────┐
 │ Application (SCREEN_POST_WINDOW) │
 ├─────────────────────────────────────┤
@@ -55,14 +54,13 @@ This article explains how QNX Screen Graphics Subsystem integrates with hardware
 | **OpenWF Display** | Hardware-independent display abstraction (Khronos standard) |
 | **Vendor WFD Driver** | Hardware-specific implementation |
 | **DRM/KMS** | Linux kernel display framework |
-
 ---
 
 ## The SCREEN_POST_WINDOW Journey
 
 ### Function Signature
 
-```c
+```
 int screen_post_window(screen_window_t win, 
                     screen_buffer_t buf, 
                     int count, 
