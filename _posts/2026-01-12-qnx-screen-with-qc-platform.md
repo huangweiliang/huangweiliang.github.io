@@ -90,9 +90,9 @@ screen_post_window(win, bufs[0], 1, NULL, 0);
 
 * Receives posted buffers from multiple windows
 * Performs composition based on:
-** Z-order (window stacking)
-** Transparency/alpha blending
-** Clipping regions
+  * Z-order (window stacking)
+  * Transparency/alpha blending
+  * Clipping regions
 * Assigns windows to hardware pipelines
 
 ### Dirty Rectangle Optimization
@@ -314,11 +314,12 @@ wfdBindSourceToPipeline(WFDDevice device,
                      WFDTransition transition,
                      const WFDRect *region) WFD_APIEXIT
 ```
-__WFDDevice device__
+
+**WFDDevice device**
 
 Handle to the display device (typically represents one display controller)
 
-__WFDPipeline pipeline__
+**WFDPipeline pipeline**
 
 Hardware layer/overlay to use
 
@@ -333,7 +334,7 @@ typedef struct {
 } PIPELINE;
 ```
 
-__WFDSource source__:
+**WFDSource source**:
 
 ```
 typedef struct {
@@ -347,7 +348,7 @@ typedef struct {
 } SOURCE;
 ```
 
-__WFDTransition transition__
+**WFDTransition transition**
 
 | Transition | Behavior |
 |-----------|---------|
@@ -356,7 +357,7 @@ __WFDTransition transition__
 | Vendor extensions |  	Fade, wipe, or other effects |
 ---
 
-__WFDRect region : Source crop rectangle (NULL = entire source)__
+**WFDRect region**: Source crop rectangle (NULL = entire source)
 
 ```
 typedef struct {
@@ -700,7 +701,7 @@ Hardware Composition
 // No CPU involvement, much lower power!
 ```
 
-__Asynchronous Commits__
+### Asynchronous Commits
 
 ```
 // Non-blocking commit
@@ -712,7 +713,7 @@ screen_get_window_property_pv(win, SCREEN_PROPERTY_RENDER_BUFFERS, &bufs);
 // Render to bufs[1] while bufs[0] is being displayed
 ```
 
-__Dirty Rectangle Tracking__
+### Dirty Rectangle Tracking
 
 ```
 // Only update changed regions
@@ -723,7 +724,7 @@ screen_post_window(win, buf, 1, dirty, 0);
 // Saves composition bandwidth
 ```
 
-__Format Optimization__
+### Format Optimization
 
 | Use Case | Recommended Format | Why |
 |-----------|---------|---------|
