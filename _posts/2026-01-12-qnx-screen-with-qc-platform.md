@@ -14,4 +14,4 @@ tags:
 
 ## Overview
 
-This article explains how QNX Screen Graphics Subsystem integrates with hardware vendor implementations, specifically focusing on Qualcomm's OpenWF Display (WFD) architecture. Understanding this flow is crucial for embedded graphics development on QNX platforms.
+This article explains how QNX Screen Graphics Subsystem integrates with hardware vendor implementations, specifically focusing on Qualcomm's OpenWF Display (WFD) architecture. Understanding this flow is crucial for embedded graphics development on QNX platforms.### Visual Example
