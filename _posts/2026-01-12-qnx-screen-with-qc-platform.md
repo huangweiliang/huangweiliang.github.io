@@ -1,3 +1,16 @@
+---
+layout: post
+title:  "QNX Screen screen_post_window() and Qualcomm OpenWF Display Integration "
+subtitle: "A short summary"
+header-img: img/post-bg-coffee.jpeg
+date:   2025-07-26 08:00:00
+author: half cup coffee
+catalog: true
+tags:	
+    - Linux
+    - QNX
+---
+
 # QNX Screen screen_post_window() and Qualcomm OpenWF Display Integration
 
 ## Overview
