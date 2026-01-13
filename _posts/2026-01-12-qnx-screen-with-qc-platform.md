@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "QNX Screen screen_post_window() and Qualcomm OpenWF Display Integration "
+title:  "QNX Screen screen_post_window() and Qualcomm OpenWF Display "
 subtitle: "A short summary"
 header-img: img/post-bg-coffee.jpeg
 date:   2026-01-12 08:00:00
