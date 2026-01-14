@@ -5,6 +5,7 @@ subtitle: "To know more about tty"
 header-img: img/post-bg-coffee.jpeg
 date:   2026-01-12 09:00:00
 author: half cup coffee
+comments: true
 catalog: true
 tags:	
     - QNX
