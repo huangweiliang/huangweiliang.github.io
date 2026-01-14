@@ -54,6 +54,7 @@ This article explains how QNX Screen Graphics Subsystem integrates with hardware
 | **OpenWF Display** | Hardware-independent display abstraction (Khronos standard) |
 | **Vendor WFD Driver** | Hardware-specific implementation |
 | **DRM/KMS** | Linux kernel display framework |
+
 ---
 
 ## The SCREEN_POST_WINDOW Journey
@@ -107,6 +108,7 @@ screen_post_window(win, buf, 1, dirty_rects, 0);
 | **SCREEN_WAIT_IDLE** | Blocks until buffer is displayed |
 | **SCREEN_POST_ASYNC** | Returns immediately without waiting |
 | **0 (default)** | Standard vsync-synchronized posting |
+
 ---
 
 ## OpenWF Display Abstraction Layer
@@ -216,12 +218,12 @@ wfdDeviceCommit(device, WFD_COMMIT_ENTIRE_DEVICE, WFD_INVALID_HANDLE);
 
 ### MDP Pipeline Types
 
-
 | Pipeline Type | Purpose | Capabilities |
 |-----------|---------|---------|
 | VIG (Video) | Video playback | Scaling, YUV→RGB, rotation, deinterlacing |
 | RGB (Graphics) | UI rendering | Alpha blending, basic transforms |
 | DMA (Direct) | Cursors, simple overlays | Minimal processing, low latency |
+
 ---
 
 ### Qualcomm-Specific WFD Implementation
@@ -355,6 +357,7 @@ typedef struct {
 | WFD_TRANSITION_IMMEDIATE | Apply immediately (may tear) |
 | WFD_TRANSITION_AT_VSYNC | Wait for vertical blank |
 | Vendor extensions |  	Fade, wipe, or other effects |
+
 ---
 
 **WFDRect region**: Source crop rectangle (NULL = entire source)
@@ -732,4 +735,5 @@ screen_post_window(win, buf, 1, dirty, 0);
 | Photos | SCREEN_FORMAT_RGB888 | No alpha needed, saves memory|
 | Video | SCREEN_FORMAT_NV12 | Native camera/decoder format |
 | Low-power UI | SCREEN_FORMAT_RGB565  | Half the bandwidth |
+
 ---
