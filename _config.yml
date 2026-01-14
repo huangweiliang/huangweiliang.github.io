@@ -57,7 +57,7 @@ kramdown:
 gitalk:
   enable: true    #是否开启Gitalk评论
   clientID: Ov23liJ4yYskVPP2TpcD                            #生成的clientID
-  clientSecret: f373f7e9a8e92e7a247bb74984ea5e054df6866e    #生成的clientSecret
+  clientSecret: 17e0ebc75cd4636861439148a6a48261ca6d082a    #生成的clientSecret
   repo: huangweiliang.github.io    #仓库名称
   owner: huangweiliang    #github用户名
   admin: huangweiliang
