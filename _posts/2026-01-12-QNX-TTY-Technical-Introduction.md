@@ -207,29 +207,32 @@ This command starts `qtalk` (a communication utility) connected to `/dev/ttyq0` 
 
 Later, you can reattach to this session or leave it running in the background. The slave device `/dev/ttyq0` ensures that `qtalk` has proper terminal semantics even when detached.
 
-```mermaid
-graph TB
-    subgraph before["Before dtach"]
-        A[User Shell] -->|controls| B[qtalk process]
-        B -->|uses| C[/dev/ttyq0]
-    end
-    
-    subgraph after["After: dtach -n /tmp/vmm"]
-        D[dtach daemon] -->|manages| E[/tmp/vmm socket]
-        D -->|controls| F[qtalk process]
-        F -->|uses| G[/dev/ttyq0]
-        H[User Shell] -.->|detached| D
-    end
-    
-    subgraph reattach["Reattach later"]
-        I[Any Shell] -->|dtach -a| J[/tmp/vmm socket]
-        J -->|reconnects| K[qtalk process]
-        K -->|uses| L[/dev/ttyq0]
-    end
-    
-    style E fill:#fff3cd,stroke:#856404
-    style F fill:#d1ecf1,stroke:#0c5460
-    style K fill:#d1ecf1,stroke:#0c5460
+**Session Lifecycle:**
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│ Phase 1: Before dtach                                       │
+│                                                             │
+│   User Shell ──controls──> qtalk process ──uses──> ttyq0   │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────┐
+│ Phase 2: After "dtach -n /tmp/vmm qtalk -m /dev/ttyq0"     │
+│                                                             │
+│   User Shell ··detached··> dtach daemon ──manages──> socket│
+│                                  │                          │
+│                                  └──controls──> qtalk       │
+│                                                   │          │
+│                                                   └──> ttyq0│
+└─────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────┐
+│ Phase 3: Reattach later with "dtach -a /tmp/vmm"           │
+│                                                             │
+│   Any Shell ──dtach -a──> /tmp/vmm socket ──reconnects──>  │
+│                                qtalk process ──uses──> ttyq0│
+└─────────────────────────────────────────────────────────────┘
 ```
 
 ### Process Communication
