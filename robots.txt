@@ -20,4 +20,4 @@ Disallow:
 User-agent: *
 Disallow: 
 Disallow: /cgi-bin/
-Sitemap: https://huangweiliang.github.io/
+Sitemap: https://huangweiliang.github.io/sitemap.xml
