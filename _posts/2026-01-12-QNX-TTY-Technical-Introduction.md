@@ -3,7 +3,7 @@ layout: post
 title:  "Understanding Terminal Devices in QNX Neutrino RTOS"
 subtitle: "To know more about tty"
 header-img: img/post-bg-coffee.jpeg
-date:   2025-01-12 09:00:00
+date:   2026-01-12 09:00:00
 author: half cup coffee
 catalog: true
 tags:	
