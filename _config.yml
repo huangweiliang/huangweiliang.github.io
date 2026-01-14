@@ -1,10 +1,10 @@
 # Site settings
-title: HUANG
-SEOTitle: huang weiliang | Embedded software | Linux Android QNX | Automotive
+title: HUANG - Embedded Systems & Automotive Software
+SEOTitle: Huang Weiliang | Embedded Systems Expert | Linux, QNX, Virtualization | Automotive Software Architecture
 header-img: img/post-bg-universe.jpg
 email:
-description: "huang weiliang, blog, Linux, QNX, Virtualization, arm64, android, device driver"
-keyword: "huang weiliang, blog, Linux, QNX, Virtualization, arm64, android, device driver"
+description: "Technical blog by Huang Weiliang, IEEE Senior Member and Platform Product Owner at Robert Bosch. Expert insights on embedded systems, Linux kernel, QNX RTOS, automotive software, virtualization, storage subsystems (UFS, M-PHY), display graphics, and device driver development. 17+ years of experience in automotive and embedded software engineering."
+keyword: "huang weiliang, embedded systems, automotive software, Linux kernel, QNX Neutrino, RTOS, virtualization, VirtIO, hypervisor, UFS storage, M-PHY, device drivers, BSP, board support package, arm64, Android, display subsystem, graphics, automotive HMI, ADAS, software architecture, real-time systems, QNX development, kernel debugging"
 url: "https://huangweiliang.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/huangweiliang/huangweiliang.github.io.git" # you code repository
