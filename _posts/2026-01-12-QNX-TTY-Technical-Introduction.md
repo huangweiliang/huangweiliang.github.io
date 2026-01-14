@@ -208,20 +208,20 @@ This command starts `qtalk` (a communication utility) connected to `/dev/ttyq0` 
 Later, you can reattach to this session or leave it running in the background. The slave device `/dev/ttyq0` ensures that `qtalk` has proper terminal semantics even when detached.
 
 ```mermaid
-graph LR
-    subgraph "Before dtach"
+graph TB
+    subgraph before["Before dtach"]
         A[User Shell] -->|controls| B[qtalk process]
         B -->|uses| C[/dev/ttyq0]
     end
     
-    subgraph "After: dtach -n /tmp/vmm"
+    subgraph after["After: dtach -n /tmp/vmm"]
         D[dtach daemon] -->|manages| E[/tmp/vmm socket]
         D -->|controls| F[qtalk process]
         F -->|uses| G[/dev/ttyq0]
         H[User Shell] -.->|detached| D
     end
     
-    subgraph "Reattach later"
+    subgraph reattach["Reattach later"]
         I[Any Shell] -->|dtach -a| J[/tmp/vmm socket]
         J -->|reconnects| K[qtalk process]
         K -->|uses| L[/dev/ttyq0]
