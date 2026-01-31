@@ -46,7 +46,7 @@ The QNX Hypervisor solves this with a **hardware-assisted shared memory device**
 │  │   QNX Host      │           │  Linux/Android   │        │
 │  │   Guest         │           │  Guest           │        │
 │  │                 │           │                  │        │
-│  │  Shmem Driver   │◄─────────►│  gm-shmem.ko    │        │
+│  │  Shmem Driver   │◄─────────►│  xx-shmem.ko    │        │
 │  │  (QNX native)   │  Notify   │  (Linux driver) │        │
 │  └────────┬────────┘           └────────┬─────────┘        │
 │           │                              │                  │
@@ -250,7 +250,7 @@ static int shmem_detach(struct file *filp) {
 
 ```c
 // User space misbehavior (intentional or bug):
-fd = open("/dev/gm-shmem-camera1", O_RDWR);
+fd = open("/dev/xx-shmem", O_RDWR);
 
 ioctl(fd, BUFIOC_ATTACH, &pages);  // Creates connection #3, allocates sigevent
 // ... forgot to detach ...
@@ -422,7 +422,7 @@ We developed test tools to validate the driver:
 
 ```c
 // Test repeated attach/detach cycles
-./test_attach_detach /dev/gm-shmem-camera1 50 100
+./test_attach_detach /dev/xx-shmem 50 100
 
 // Expected with bug: Fails around iteration 32
 // Expected with fix: All 50 iterations succeed
@@ -442,7 +442,7 @@ The test clearly demonstrates resource exhaustion:
 **Enable driver debug messages:**
 ```bash
 echo 8 > /proc/sys/kernel/printk  # Enable debug level
-dmesg -w | grep gm-shmem
+dmesg -w | grep xx-shmem
 ```
 
 **Monitor hypervisor resources:**
@@ -483,12 +483,6 @@ This investigation reinforces the importance of rigorous resource management in 
 - Linux Kernel Device Driver Documentation
 - "Virtualization in Safety-Critical Systems" - SAE International
 
-## Source Code
-
-The complete driver implementation and test tools are available at:
-- [Driver source](gm-shmem.c)
-- [Test applications](test_attach_detach.c, test_multiple_attach.c)
-- [Header definitions](guest_shm.h)
 
 ---
 
