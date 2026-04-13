@@ -35,12 +35,13 @@ But the android16-6.12 branch can not be built. I see there is a ticket reported
 months ago. The issue is not sovled yet. So to build the android kernel v6.12 I tried to build
 it manually which w/o the Bazel environment.
 
+# Steps to construct QEMU arm64 Linux with busybox RFS
+
 Fetch the code:
 
 ```bash
-
-git clone --branch android16-6.12-lts --single-branch --depth 1 https://android.googlesource.com/kernel/common
-
+git clone --branch android16-6.12-lts --single-branch --depth 1 \
+                https://android.googlesource.com/kernel/common
 ```
 
 Setup build env:
@@ -60,9 +61,11 @@ make O=out LLVM=1 gki_defconfig
 ```
 
 Please note that after the .config is generated, we need to modify the out/.config to add any
-drivers we need and the initramfs to compile the busybox ramdisk into the kernel image.
+drivers we need and the initramfs to compile the busybox ramdisk into the kernel image. For 
+example, we need to enable the virtio_blk, virtio_net and so on. Here is the .config file
+i am used.
 
-Compile the kernel:
+Then compile the kernel:
 ```bash
 make O=out LLVM=1 -j4
 ```
@@ -74,14 +77,73 @@ llvm-objcopy -O binary -R .notes -R .comment -S vmlinux Image
 ```
 
 Launch the Kernel with QEMU: simplest command
-
 ```bash
-qemu-system-aarch64 -machine virt -cpu cortex-a57 -machine type=virt  -m 1024 -smp 4 -kernel /Users/huang/workspace/android/Image2  --append "rdinit=/linuxrc root=/dev/vda rw console=ttyAMA0 loglevel=8"  -nographic  -accel hvf
+qemu-system-aarch64 -machine virt -cpu cortex-a57  -m 1024 -smp 4 \
+                         -kernel /Users/huang/workspace/android/Image  \
+                         --append "rdinit=/linuxrc root=/dev/vda rw console=ttyAMA0 loglevel=8"  \
+                         -nographic  -accel hvf
 ```
 
+# Extension steps to construct QEMU arm64 Linux with debian RFS
 
+![Crepe](/img/macbook-qemu-debian.png)
 
+After i make the arm64 + Busybox RFS successfully running. I tried to enable the graphic for
+this construction. 
 
+Below commands enabled the virtio-gpu, with this config, we are able to see the drm graphic drivers in the qemu arm64 kernel.
 
+```bash
+qemu-system-aarch64 -cpu cortex-a57 -machine type=virt  -m 1024 -smp 4 \
+         -kernel /Users/huang/workspace/android/Image  \
+         --append "rdinit=/linuxrc root=/dev/vda rw console=ttyAMA0 loglevel=8 drm.debug=0x1ff console=tty0 video=Virtual-1:800x600@60"   \
+         -nographic  -accel hvf \
+         -device virtio-gpu,max_outputs=1 -display cocoa -vga none  \
+         -netdev user,id=net0 -device virtio-net-device,netdev=net0 \
+         -virtfs local,path=/Users/huang/workspace/android,mount_tag=hostshare,security_model=passthrough,id=hostshare
 
+```
+
+At this moment we are able to use modetest to run the graphic test directly. But i want to make weston up running. 
+To speed up, I am using the prebuilt [debian 13 arm64 system image](https://cdimage.debian.org/cdimage/cloud/trixie/latest/debian-13-generic-arm64.raw). 
+
+Then use this command to launch the arm64 kernel + debian arm64 RFS. 
+
+```bash
+qemu-system-aarch64 -cpu cortex-a57 -machine type=virt  -m 1024 -smp 4 \
+         -kernel /Users/huang/workspace/android/Image4  \
+         --append "root=/dev/vda1 rw console=ttyAMA0  loglevel=2 drm.debug=0x1ff video=Virtual-1:800x600@60"   \
+         -nographic  -accel hvf \
+         -device virtio-gpu,max_outputs=1 -display cocoa -vga none  \
+         -netdev user,id=net0 -device virtio-net-device,netdev=net0 \
+         -virtfs local,path=/Users/huang/workspace/android,mount_tag=hostshare,security_model=passthrough,id=hostshare \
+         -device virtio-keyboard-pci  -device virtio-mouse-pci -drive format=raw,file=/Volumes/my1tb/debian-13-generic-arm64.raw \
+         -no-reboot
+```
+
+After we launched the system, we can use below command to start the weston:
+
+```bash
+export XDG_RUNTIME_DIR=/run/user/0
+mkdir -p $XDG_RUNTIME_DIR
+chmod 700 $XDG_RUNTIME_DIR
+weston --backend=drm-backend.so --socket=wayland-0 &
+
+```
+
+To make apt-get command working to install any applications, we need to enable the network:
+
+```bash
+ifconfig eth0 up
+udhcpc -i eth0
+ip addr add 10.0.2.15/24 dev eth0
+ip link set eth0 up
+ip route add default via 10.0.2.2
+echo "nameserver 10.0.2.3" > /etc/resolv.conf
+```
+
+Start the graphic test command of Weston:
+```bash
+weston-simple-egl
+```
 
