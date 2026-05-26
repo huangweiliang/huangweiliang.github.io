@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "2 points from paper <A Time Scaling Theory for Multi-Layer Electronic Systems>"
+title:  "2 points from paper A Time Scaling Theory for Multi-Layer Electronic Systems"
 subtitle: "To see what exactly Huawei did"
 header-img: img/post-bg-coffee.jpeg
 date:   2026-05-25 08:55:59
