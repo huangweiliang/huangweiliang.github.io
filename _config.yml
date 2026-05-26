@@ -11,7 +11,7 @@ github_repo: "https://github.com/huangweiliang/huangweiliang.github.io.git" # yo
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "God bless us!"
+sidebar-about-description: " Hello World ! "
 sidebar-avatar: /img/weiliang/me.png      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
